@@ -20,12 +20,13 @@
                 <img src="./images/generate.png">
                 <p>Generate Password</p>
             </div>
+            <input type="number" id="passLenght" placeholder="Lenth of password">
         </div>
     </div>
 
     <script>
         const passwordBox = document.getElementById('password');
-        const length = 10;
+        const length = document.getElementById('passLenght');
 
         const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         const lowerCase = "abcdefghijklmnopqrstuvwxyz";
@@ -34,12 +35,13 @@
 
 
         function generatePassword() {
+            console.log(length.value);
             let password = "";
             password += upperCase[Math.floor(Math.random() * upperCase.length)];
             password += lowerCase[Math.floor(Math.random() * lowerCase.length)];
             password += symbol[Math.floor(Math.random() * symbol.length)];
 
-            while(password.length < length){
+            while(password.length < length.value){
                 password += allChar[Math.floor(Math.random() * allChar.length)];
             }
             passwordBox.value = password;
