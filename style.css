@@ -17,6 +17,7 @@
     width: 100%;
     max-width: 440px;
     margin: 12%;
+    disabled: true;
 }
 .password h1{
     font-weight: 400;
